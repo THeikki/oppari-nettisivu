@@ -1,7 +1,6 @@
 <template>
   <div v-show="showLogin">
     <LoginComponent
-    :text='text'
     :login='login'
     />
   </div>
@@ -16,6 +15,7 @@
     <AlertComponent
     :deletePlayerProfile='deletePlayerProfile'
     :cancel='cancel'
+    :text='text'
     />
   </div>
 </template>
@@ -33,6 +33,11 @@ export default {
     LoginComponent,
     PlayerStatsComponent,
     AlertComponent
+  },
+  data () {
+    return {
+      text: 'Do you want to delete your profile?'
+    }
   },
   computed: {
     playerStats () {

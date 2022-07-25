@@ -1,13 +1,11 @@
 <template>
     <div class="alert-container">
-        <p>Do you want to delete your profile?</p>
-        <p>It can`t be undone!</p>
+        <p>{{ text }}</p>
+        <br/>
+        <button class="cancelButton" @click.prevent="cancel">NO</button>
         <br/>
         <br/>
-        <button class="confirmButton" @click.prevent="deletePlayerProfile">Delete Profile</button>
-        <br/>
-        <br/>
-        <button class="cancelButton" @click.prevent="cancel">Cancel</button>
+        <button class="confirmButton" @click.prevent="deletePlayerProfile">YES</button>
     </div>
 </template>
 <script>
@@ -15,17 +13,12 @@ export default {
   name: 'AlertComponent',
   props: {
     deletePlayerProfile: Function,
-    cancel: Function
+    cancel: Function,
+    text: String
   }
 }
 </script>
 <style scoped>
-button {
-    width: 150px;
-}
-button:hover {
-    background-color: aqua;
-}
 .alert-container {
   position: fixed;
   top: 0px;
@@ -47,7 +40,7 @@ button:hover {
   background-color:rgb(109, 178, 235);
   border: 1px solid transparent;
   width: 150px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -65,7 +58,7 @@ button:hover {
   background-color:rgb(209, 43, 43);
   border: 1px solid transparent;
   width: 150px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

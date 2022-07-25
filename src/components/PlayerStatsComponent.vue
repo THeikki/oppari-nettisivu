@@ -1,13 +1,11 @@
 <template>
   <div class="content">
     <div class="image">
-      <div>
-        <button class="logoutButton" @click.prevent="logout">Log out</button>
-      </div>
+      <button class="logoutButton" @click.prevent="logout">Log out</button>
       <div class="center_stats">
-        <div class="user_content">
-        <h1>{{ playerStats.username }} `s game Statistics</h1>
-          <div v-cloak class="table-container">
+        <div v-cloak class="user_content">
+        <h1>{{ playerStats.username }} `s Game Statistics</h1>
+          <div class="table-container">
             <table>
               <thead>
                 <tr>
@@ -63,14 +61,7 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-.logout-position {
-  position: fixed;
-  top: 80px;
-  width: 100%;
-  margin-left: 20px;
-}
 [v-cloak] {
   display: none;
 }
@@ -124,7 +115,7 @@ h1 {
   background-color:rgb(221, 145, 82);
   border: none;
   width: 150px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -141,7 +132,7 @@ h1 {
   margin-bottom: 10px;
   background-color:rgb(165, 179, 42);
   border: none;
-  padding: 10px;
+  padding: 5px;
   width: 150px;
   color: rgb(0, 0, 0);
   cursor: pointer;

@@ -77,7 +77,7 @@ export default {
   background-color:rgb(29, 165, 108);
   border: 1px solid transparent;
   width: 150px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

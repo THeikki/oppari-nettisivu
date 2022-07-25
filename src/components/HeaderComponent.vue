@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="center">
-            <nav>
+            <nav v-if="isAccessable">
                 <router-link to="/">Home</router-link> |
                 <router-link to="/register">Register</router-link>
             </nav>
@@ -9,7 +9,17 @@
     </header>
     <router-view/>
 </template>
-
+<script>
+export default {
+  computed: {
+    isAccessable: {
+      get () {
+        return this.$store.state.isAccessable
+      }
+    }
+  }
+}
+</script>
 <style scoped>
 .header {
     position: fixed;
@@ -21,11 +31,9 @@
     margin: 0;
 }
 .center {
-    margin: 0;
     position: absolute;
     top: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 10%;
 }
 nav {
     padding: 30px;

@@ -15,11 +15,6 @@ export default {
   components: {
     RegisterComponent
   },
-  data () {
-    return {
-      text: 'Welcome to register page'
-    }
-  },
   methods: {
     ...mapActions([
       'onSubmit'

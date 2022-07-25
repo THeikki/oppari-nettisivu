@@ -8,6 +8,7 @@ export default createStore({
     showValues: false,
     showLogin: true,
     showDeleteComponent: false,
+    isAccessable: true,
     playerStats: {
       _id: '',
       username: '',
@@ -76,6 +77,7 @@ export default createStore({
       localStorage.clear()
       this.state.showValues = false
       this.state.showLogin = true
+      this.state.isAccessable = true
       console.log('Logged out successfully' + '\n' + 'Session cleared')
     },
     async login ({ commit, dispatch }) {
@@ -101,8 +103,6 @@ export default createStore({
           commit('setUsername', '')
           commit('setPassword', '')
           dispatch('getPlayerStats')
-          this.state.showValues = true
-          this.state.showLogin = false
         })
         .catch(error => {
           alert(error, 'Virhe')
@@ -144,6 +144,9 @@ export default createStore({
         })
         .then((response) => {
           commit('setPlayerStats', response.data)
+          this.state.showValues = true
+          this.state.showLogin = false
+          this.state.isAccessable = false
         })
         .catch((error) => {
           // alert(error, 'Virhe')
