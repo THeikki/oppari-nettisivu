@@ -11,7 +11,7 @@
     :onDelete='onDelete'
     />
   </div>
-  <div v-show="showDeleteComponent">
+  <div v-show="showAlert">
     <AlertComponent
     :deletePlayerProfile='deletePlayerProfile'
     :cancel='cancel'
@@ -50,7 +50,7 @@ export default {
       return this.$store.state.showLogin
     },
     showDeleteComponent () {
-      return this.$store.state.showDeleteComponent
+      return this.$store.state.showAlert
     }
   },
   methods: {

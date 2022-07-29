@@ -7,7 +7,7 @@ export default createStore({
     password: '',
     showValues: false,
     showLogin: true,
-    showDeleteComponent: false,
+    showAlert: false,
     isAccessable: true,
     playerStats: {
       _id: '',
@@ -55,10 +55,10 @@ export default createStore({
   },
   actions: {
     onDelete () {
-      this.state.showDeleteComponent = true
+      this.state.showAlert = true
     },
     cancel () {
-      this.state.showDeleteComponent = false
+      this.state.showAlert = false
     },
     onSubmit ({ commit, dispatch }) {
       if (!this.state.username) {
@@ -168,7 +168,7 @@ export default createStore({
           alert(alertMessage)
           localStorage.clear()
           commit('deletePlayerProfile', id)
-          this.state.showDeleteComponent = false
+          this.state.showAlert = false
           this.state.showValues = false
           this.state.showLogin = true
           this.state.isAccessable = true
