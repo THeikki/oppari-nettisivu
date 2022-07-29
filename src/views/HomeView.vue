@@ -49,7 +49,7 @@ export default {
     showLogin () {
       return this.$store.state.showLogin
     },
-    showDeleteComponent () {
+    showAlert () {
       return this.$store.state.showAlert
     }
   },
